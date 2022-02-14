@@ -1,17 +1,21 @@
 import React from "react";
-import './pagination.css'
+import "./pagination.css";
 type PaginationProps = {
-  transPerPage: number;
-  totalTrans: number;
+  pizzasPerPage: number;
+  totalPizzas: number;
   paginationHandler: (num: number) => void;
   currentPage: number;
 };
 
 const Pagination = (props: PaginationProps) => {
-  const { transPerPage, totalTrans, paginationHandler, currentPage } = props;
+  const { pizzasPerPage, totalPizzas, paginationHandler, currentPage } = props;
   let PageNumbers: any[] = [];
 
-  for (let index = 1; index <= Math.ceil(totalTrans / transPerPage); index++) {
+  for (
+    let index = 1;
+    index <= Math.ceil(totalPizzas / pizzasPerPage);
+    index++
+  ) {
     PageNumbers.push(index);
   }
 

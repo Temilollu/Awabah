@@ -12,11 +12,14 @@ const Pizza = ({ formData, setFormData }: PizzaProps) => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [transPerPage] = useState(5);
+  const [pizzasPerPage] = useState(5);
   const [search, setSearch] = useState("");
-  const indexOfLastTrans = currentPage * transPerPage;
-  const indexOfFirstTrans = indexOfLastTrans - transPerPage;
-  const currentTrans = filteredData?.slice(indexOfFirstTrans, indexOfLastTrans);
+  const indexOfLastPizza = currentPage * pizzasPerPage;
+  const indexOfFirstPizzas = indexOfLastPizza - pizzasPerPage;
+  const currentPizzas = filteredData?.slice(
+    indexOfFirstPizzas,
+    indexOfLastPizza
+  );
 
   const changePaginationTrans = (page: number) => {
     setCurrentPage(page);
@@ -49,19 +52,18 @@ const Pizza = ({ formData, setFormData }: PizzaProps) => {
     setCurrentPage(1);
   }, [search, data]);
 
-
   return (
     <div>
-      <strong>Select a recipe to continue</strong>
+      <strong>Select a pizza to continue</strong>
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        style={{ width: "95%", marginTop : 5 }}
-        placeholder="search recipe"
+        style={{ width: "95%", marginTop: 5 }}
+        placeholder="search pizza"
       />
       <div className="pizza-card">
-        {currentTrans.map((item: { title: string; image_url: string }) => (
+        {currentPizzas.map((item: { title: string; image_url: string }) => (
           <div
             className={
               formData.pizzaTitle === item.title
@@ -83,9 +85,9 @@ const Pizza = ({ formData, setFormData }: PizzaProps) => {
         ))}
       </div>
       <Pagination
-        transPerPage={transPerPage}
+        pizzasPerPage={pizzasPerPage}
         currentPage={currentPage}
-        totalTrans={filteredData?.length}
+        totalPizzas={filteredData?.length}
         paginationHandler={(num) => changePaginationTrans(num)}
       />
     </div>

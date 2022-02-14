@@ -44,12 +44,12 @@
 }
 
 .summary-item .key {
-  flex: 1;
+  flex: 1.5;
   margin: 5px 0;
 }
 
 .summary-item .value {
-  flex: 1;
+  flex: 2.5;
   margin: 5px 0;
 }
 
@@ -105,6 +105,6 @@ input:focus {
   background-color: rgb(224, 238, 240);
 }
 
-h1{
-    margin: 5px 0;
+h1 {
+  margin: 5px 0;
 }
