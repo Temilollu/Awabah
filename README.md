@@ -1,46 +1,23 @@
-# Getting Started with Create React App
+To run the project locally do the following :
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Clone the project
+- run npm install
+- run npm start
 
-## Available Scripts
+Answers to Questions
 
-In the project directory, you can run:
+- How do you document your frontend code ?
+  I document my frontend code by first starting with the tools used (framework, library, packages), links to their documentation and how to set up and run the code.
+  I also talk about folder structure
+- What are your thoughts on testing for the front-end?
+  Testing is very important as it can help identify bugs before pushing to product and it makes it covienient to change or add new features to the site knowing that if anything woukd be broken as a result of the changes,test written would catch it hence preventing it from pushing bugs and breaking existing features
+- What Design Patterns have you used in your frontend projects?
+  The major one i've used is container components and presentational components
+  There's also the use of custom hooks and reusable components
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- What do you think about Typescript on the front-end?
+  Javascript is dynamically typed, meaning that the developer doesn't have to set the data types, so a variable can hold a string , number or even a function at run time, this could have harmful effects as the developer could unintetionally change the data type froma astring to a number then try to use it for a calculation, typescript solves this and hence leads to less bugs, makes the programme much more predictable and bugs are caught faster
+- What are the most important performance issues in React web applications?
+  Rerenders if not handled properly can lead to slowing down of the app
+- How did you decide on the technical and architectural choices used as part of your solution?
+  Based on the nature of the task, we needed some form of steps where users can navigate between steps without loosing data and having the need to display the data , i conditionally rendered differenct components based on the stage the user is, so each stage is a component and they all share the same state from the parent thus, when user navigates betweem steps, since the parent component doesn't unmount, its state is preserved across stages,
