@@ -21,3 +21,6 @@ Answers to Questions
   Rerenders if not handled properly can lead to slowing down of the app
 - How did you decide on the technical and architectural choices used as part of your solution?
   Based on the nature of the task, we needed some form of steps where users can navigate between steps without loosing data and having the need to display the data , i conditionally rendered differenct components based on the stage the user is, so each stage is a component and they all share the same state from the parent thus, when user navigates betweem steps, since the parent component doesn't unmount, its state is preserved across stages,
+
+- Are there any improvements you could make to your submission?
+  Yes, the UI isnt so great, if i had one, it'd be a lot better
