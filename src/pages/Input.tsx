@@ -1,11 +1,11 @@
 type AppProps = {
   name: string;
   placeholder?: string;
-  value: string | number ;
+  value: string | number;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   label: string;
   type: string;
-  fullWidth? : boolean;
+  fullWidth?: boolean;
 };
 const Input = ({
   name,
@@ -14,7 +14,7 @@ const Input = ({
   placeholder,
   label,
   type,
-  fullWidth
+  fullWidth,
 }: AppProps) => {
   return (
     <label>
@@ -25,7 +25,8 @@ const Input = ({
         value={value}
         placeholder={placeholder}
         type={type}
-        style={{width : fullWidth ? '95%' : '47%'}}
+        style={{ width: fullWidth ? "95%" : "47%" }}
+        className={fullWidth ? "" : "input-step1"}
       />
     </label>
   );

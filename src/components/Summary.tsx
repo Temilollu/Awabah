@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 type SummaryProps = {
   formData: {
     firstName: string;
@@ -8,14 +10,13 @@ type SummaryProps = {
     pizzaType: string;
     pizzaSize: string;
   };
-  children?: Element | any;
+  children?: ReactNode;
 };
 
 const Summary = ({ formData, children }: SummaryProps) => {
-
   return (
     <>
-    <h4>Order Summary</h4>
+      <h4>Order Summary</h4>
       <div className="summary-item">
         <p className="key">Pizza type :</p>
         <p className="value">{formData.pizzaType}</p>

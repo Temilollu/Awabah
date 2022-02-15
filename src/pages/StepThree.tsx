@@ -2,9 +2,9 @@ import Input from "./Input";
 
 type StepThreeProps = {
   formData: {
-    cardNo: number | string;
-    cardExpiration:  string;
-    cardCode: number | string;
+    cardNo: string;
+    cardExpiration: string;
+    cardCode: string;
   };
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
@@ -22,6 +22,9 @@ const StepThree = ({ handleChange, formData }: StepThreeProps) => {
           label="Card Number"
           fullWidth
         />
+        {formData.cardNo.length < 16 && formData.cardNo !== "" && (
+          <div className="error">Card number must be 16 digits</div>
+        )}
       </div>
       <div className="item">
         <Input
@@ -29,10 +32,9 @@ const StepThree = ({ handleChange, formData }: StepThreeProps) => {
           handleChange={handleChange}
           value={formData.cardExpiration}
           placeholder="Card Expiration"
-          type="date"
+          type="month"
           label="Card Expiration"
           fullWidth
-          
         />
       </div>
       <div className="item">
@@ -45,6 +47,9 @@ const StepThree = ({ handleChange, formData }: StepThreeProps) => {
           label="Card code"
           fullWidth
         />
+        {formData.cardCode.length < 3 && formData.cardCode !== "" && (
+          <div className="error">Card code must be 3 digits</div>
+        )}
       </div>
     </div>
   );

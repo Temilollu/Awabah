@@ -108,3 +108,23 @@ input:focus {
 h1 {
   margin: 5px 0;
 }
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .overall-container {
+    width: 95%;
+  }
+  .container {
+    flex-direction: column;
+  }
+  select {
+    width: 100%;
+  }
+  .input-step1 {
+    width: 95% !important;
+  }
+}

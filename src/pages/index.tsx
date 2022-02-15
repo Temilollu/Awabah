@@ -24,16 +24,26 @@ const Index = () => {
     terms: false,
   });
 
-  const handleChange = (event: any) => {
+  const handleChange = (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => {
     const { name, value } = event.target;
 
+    if (name === "cardNo" && value.length > 16) {
+      return;
+    }
+    if (name === "cardCode" && value.length > 3) {
+      return;
+    }
     setFormData({
       ...formData,
       [name]: value,
     });
   };
 
-  const handleCheck = (event: any) => {
+  const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = event.target;
 
     setFormData({
@@ -88,6 +98,8 @@ const Index = () => {
     if (
       stage === 2 &&
       (formData.cardNo === "" ||
+        formData.cardNo.length < 16 ||
+        formData.cardCode.length < 3 ||
         formData.cardExpiration === "" ||
         formData.cardCode === "")
     ) {

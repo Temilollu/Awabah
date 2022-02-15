@@ -11,8 +11,6 @@ type StepOneProps = {
   handleSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 const StepOne = ({ handleChange, formData, handleSelect }: StepOneProps) => {
-
-
   return (
     <div>
       <div className="item">
@@ -23,7 +21,6 @@ const StepOne = ({ handleChange, formData, handleSelect }: StepOneProps) => {
           id="pizzaType"
           value={formData.pizzaType}
           onChange={handleSelect}
-          defaultValue={formData.pizzaType}
         >
           {pizzaTypes.map((item) => (
             <option value={item} key={item}>
