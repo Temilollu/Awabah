@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import StepOne from "./StepOne";
 import "./index.css";
 import StepTwo from "./StepTwo";
@@ -52,7 +52,7 @@ const Index = () => {
     });
   };
   interface Content {
-    [key: number]: any;
+    [key: number]: ReactNode;
   }
 
   const content: Content = {
